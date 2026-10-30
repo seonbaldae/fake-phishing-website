@@ -1,0 +1,12 @@
+{
+  "name": "suspicious-luck-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Explicitly labeled phishing-awareness demonstration with no data collection",
+  "scripts": {
+    "dev": "python3 -m http.server 4317 --bind 127.0.0.1 --directory public",
+    "lint": "node --check public/app.js && node --check public/ads.js && node --check tests/site.test.js",
+    "test": "node --test tests/site.test.js"
+  }
+}

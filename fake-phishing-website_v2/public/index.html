@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI와 맞짱뜨기. 과장된 레트로 인터넷 광고를 안전하게 살펴보는 모의 피싱 시연입니다. 실제 이벤트가 아닙니다.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <meta name="theme-color" content="#08070c">
+  <title>AI와 맞짱뜨기 — 모의 피싱 시연</title>
+  <link rel="icon" href="assets/character.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <template id="demo-banner-template">
+    <div class="demo-banner" role="note"><strong>⚠ 모의 피싱 시연용·실제 이벤트 아님</strong><span>개인정보 수집·로그인·결제·외부 전송 없음</span></div>
+  </template>
+  <template id="site-header-template">
+    <header class="portal-strip"><div class="portal-brand"><b>★ AI 배너종합 ★</b> <mark>긴급!!</mark> 레트로 광고 모음집 <small>DEMO</small></div><div class="header-actions"><button data-explain type="button" class="explain-link">수상한가요?</button><retro-motion-toggle></retro-motion-toggle></div></header>
+  </template>
+  <template id="countdown-timer-template">
+    <div class="countdown"><span>※ 가상 카운트다운</span><time class="timer" id="countdown" aria-label="가상 시연 시간">05:00</time><span>실제 모집 마감 시간이 아닙니다</span></div>
+  </template>
+  <template id="prize-hero-template">
+    <section class="hero" aria-labelledby="hero-title"><h1 id="hero-title" class="screen-reader-only">AI와 맞짱뜨기 — 인간 개발자 VS AI, 해커톤에서 붙어보자</h1><retro-ad-banner kind="hero" class="hero-gif"></retro-ad-banner><div class="tiny-separator"><span>★ AI 한판승부 ★</span><span>▶ 해커톤 도전자 등장 ◀</span><span>★ 프롬프트 폭주 ★</span><span>⚠ 실제 이벤트 아님 ⚠</span></div><div class="hero-actions"><countdown-timer></countdown-timer><button class="claim-button" id="claim-button" type="button">AI에게 도전장 보내기 ▶</button></div></section>
+  </template>
+  <template id="prize-ticket-template">
+    <button type="button" class="character-ad" data-explain aria-label="흰색 캐릭터 광고 시연 설명 열기"><span class="character-copy"><b>★ 흰둥이 출격!!</b><span>귀여워도 수상하면 의심!</span></span><img src="assets/character.png" width="554" height="554" alt="기존 프로젝트의 웃고 있는 흰색 캐릭터"></button>
+  </template>
+  <template id="safety-ticker-template">
+    <div class="promo-strip"><span>★★ <strong>디버깅 지옥에서 살아남기</strong> ★★</span><span>※ 클릭 시 모의 피싱 설명창만 열림</span><span>AI VS 인간 개발자</span></div>
+  </template>
+  <template id="red-flags-template">
+    <section class="red-flags" aria-labelledby="flags-title"><h2 id="flags-title">※ 광고가 왜 이렇게 수상할까요?</h2><div class="flag-grid"><red-flag-card label="01" heading="과장 광고" description="터무니없이 강한 표현을 조심하세요."></red-flag-card><red-flag-card label="02" heading="조급함 유발" description="가상 타이머가 판단을 서두르게 만듭니다."></red-flag-card><red-flag-card label="03" heading="귀여운 장식" description="캐릭터는 안전을 증명하지 않습니다."></red-flag-card></div></section>
+  </template>
+  <template id="red-flag-card-template"><article class="flag"><span class="flag-number"></span><h3></h3><p></p></article></template>
+  <template id="site-footer-template"><footer class="site-footer"><strong>모의 피싱 시연용·실제 이벤트 아님</strong><span>실제 해커톤 참가 신청 및 AI 대결 기능 없음 · 개인정보 입력·외부 통신 없음</span></footer></template>
+  <template id="explanation-dialog-template">
+    <dialog id="explanation" aria-labelledby="dialog-title" aria-describedby="dialog-description"><div class="dialog-bar"><strong>⚠ 모의 피싱 시연</strong><button type="button" id="close-dialog" class="close-button" aria-label="설명 닫기">×</button></div><h2 id="dialog-title">이 광고, 진짜일까요?</h2><p id="dialog-description">이 화면은 <strong>AI·해커톤 콘셉트의 과장된 인터넷 광고</strong>를 활용한 모의 피싱 교육 시연입니다. 실제 이벤트나 AI 대결은 진행되지 않습니다.</p><ul><li>확인되지 않은 혜택·실적·긴급 문구를 의심하세요.</li><li>사이트 주소와 출처를 다시 확인하세요.</li><li>비밀번호, 인증번호, 카드 정보를 입력하지 마세요.</li></ul><p class="privacy-note">입력 폼, 결제, 추적 코드, 외부 데이터 전송이 없습니다.</p><button type="button" id="confirm-dialog" class="claim-button">설명 확인하고 닫기 ✓</button></dialog>
+  </template>
+  <template id="retro-ad-banner-template"><button type="button" class="gif-ad" aria-label="움직이는 해커톤 모의 광고 설명 열기"><img alt="해커톤 도전자 등장, 프롬프트 한 줄로 승부하라, 디버깅 지옥에서 살아남기" decoding="async"><span class="gif-stamp">GIF · 광고 시연</span></button></template>
+  <template id="retro-ad-tile-template"><button type="button" class="ad-tile" aria-label="광고 시연 설명 열기"><img decoding="async" alt=""></button></template>
+  <template id="retro-motion-toggle-template"><button class="motion-toggle" type="button" aria-pressed="false">움직임 끄기</button></template>
+  <template id="retro-ad-board-template"><section class="ad-board" aria-labelledby="board-title"><h2 id="board-title" class="screen-reader-only">레트로 해커톤 배너 광고판</h2><div id="tiles" class="tiles"></div></section></template>
+
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <demo-banner></demo-banner>
+  <div class="ad-shell">
+    <site-header></site-header>
+    <main id="main" tabindex="-1"><prize-hero></prize-hero><retro-ad-board></retro-ad-board><safety-ticker></safety-ticker><red-flags></red-flags></main>
+    <site-footer></site-footer>
+  </div>
+  <explanation-dialog></explanation-dialog>
+  <noscript><p class="noscript-note">모의 피싱 시연용·실제 이벤트 아님. JavaScript를 켜면 광고 시연 화면이 표시됩니다.</p></noscript>
+</body>
+</html>
