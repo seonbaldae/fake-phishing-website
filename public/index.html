@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="누가 봐도 수상한 경품 이벤트. 개인정보를 수집하지 않는 프로젝트 시연용 모의 피싱 페이지입니다.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+    <meta name="theme-color" content="#f44735">
+    <title>수상한 행운센터 — 모의 피싱 시연</title>
+    <link rel="icon" href="assets/character.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <template id="demo-banner-template">
+      <div class="demo-banner"><span class="status-dot"></span><strong>모의 피싱 시연용 사이트</strong><span class="banner-detail">실제 이벤트 아님 · 개인정보 수집 없음</span></div>
+    </template>
+
+    <template id="site-header-template">
+      <header class="site-header wrap">
+        <a class="brand" href="./" aria-label="수상한 행운센터 홈"><span class="brand-mark" aria-hidden="true">✳</span>수상한 행운센터<span class="brand-label">DEMO</span></a>
+        <button class="text-button" data-explain>이 사이트, 수상한가요? <span aria-hidden="true">↗</span></button>
+      </header>
+    </template>
+
+    <template id="countdown-timer-template">
+      <div class="countdown"><span class="clock-icon" aria-hidden="true"></span><span>수상한 혜택 마감까지</span><span class="timer" id="countdown" aria-label="가상 마감 시간">05:00</span><span class="simulation-label">가상 타이머</span></div>
+    </template>
+
+    <template id="prize-ticket-template">
+      <div class="prize-card">
+        <div class="card-topline"><span>LUCKY YOU, SUSPECT EVERYTHING.</span><span>No. 0001</span></div>
+        <div class="character-stage"><span class="spark spark-one" aria-hidden="true">✦</span><span class="spark spark-two" aria-hidden="true">✧</span><img src="assets/character.png" width="554" height="554" alt="발그레한 볼로 웃고 있는 흰색 캐릭터"><div class="fake-stamp">100%<br><strong>가짜 당첨</strong></div></div>
+        <div class="prize-caption"><span>오늘의 행운 주인공</span><strong>바로, 당신 (그리고 모두)</strong></div>
+        <div class="ticket-divider"></div>
+        <div class="prize-amount"><div><span>가상의 당첨금</span><strong>₩10,000,000</strong></div><span class="prize-seal" aria-hidden="true">?</span></div>
+        <p class="prize-disclaimer">이 캐릭터의 귀여움은 사이트의 안전을 보장하지 않습니다.</p>
+      </div>
+    </template>
+
+    <template id="prize-hero-template">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="tiny-star" aria-hidden="true">✦</span>참여한 적 없어도 당첨되는 놀라운 이벤트</p>
+          <h1 id="hero-title">아무것도 안 했는데<br><span>1,000만 원</span><br>당첨이라니!</h1>
+          <p class="hero-description">너무 좋아서 믿기 어렵다고요?<br>맞아요. <strong>믿으면 안 되니까요.</strong></p>
+          <countdown-timer></countdown-timer>
+          <button class="claim-button" id="claim-button">수상한 당첨금 받기<span aria-hidden="true">↗</span></button>
+          <p class="cta-note">눌러도 괜찮아요. 피싱 징후 설명만 나타납니다.</p>
+        </div>
+
+        <prize-ticket></prize-ticket>
+      </section>
+    </template>
+
+    <template id="safety-ticker-template">
+      <div class="ticker" aria-label="시연 안내"><div>너무 좋은 조건? 일단 의심하기 <span aria-hidden="true">✳</span> 이 페이지는 모의 피싱입니다 <span aria-hidden="true">✳</span> 귀여워도 수상한 건 수상한 것 <span aria-hidden="true">✳</span> 개인정보는 입력하지 마세요 <span aria-hidden="true">✳</span></div></div>
+    </template>
+
+    <template id="red-flags-template">
+      <section class="red-flags wrap" aria-labelledby="flags-title">
+        <div class="section-heading"><div><p class="eyebrow">RED FLAGS, NOT LUCKY SIGNS</p><h2 id="flags-title">이렇게 수상한데, 눈치채셨나요?</h2></div><span class="section-note">이 페이지에 숨지 않은 위험 신호 3가지</span></div>
+        <div class="flags-grid">
+          <red-flag-card label="01 / 너무 좋은 제안" heading="응모도 안 했는데&#10;제가 당첨됐다고요?" description="아무 이유 없는 거액의 당첨금.&#10;솔깃한 보상으로 클릭을 유도합니다."></red-flag-card>
+          <red-flag-card label="02 / 조급함 유발" heading="딱 5분만 준다니,&#10;생각할 틈도 없네요." description="흘러가는 타이머와 마감 압박.&#10;확인하기 전에 행동하게 만듭니다."></red-flag-card>
+          <red-flag-card label="03 / 친근함으로 위장" heading="이렇게 귀여운데&#10;설마 위험하겠어요?" description="귀여운 이미지도 안전의 증거는 아닙니다.&#10;디자인보다 주소와 출처를 확인하세요."></red-flag-card>
+        </div>
+      </section>
+    </template>
+
+    <template id="red-flag-card-template">
+      <article class="flag"><span class="flag-number"></span><h3></h3><p></p></article>
+    </template>
+
+    <template id="site-footer-template">
+      <footer class="site-footer wrap"><span class="footer-brand">수상한 행운센터 <span>© 2026 DEMO PROJECT</span></span><p>교육·프로젝트 시연용 · 실제 경품 및 금전 거래 없음</p></footer>
+    </template>
+
+    <template id="explanation-dialog-template">
+      <dialog id="explanation" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <div class="dialog-heading"><span class="dialog-label">잘 멈추셨습니다</span><button class="close-button" id="close-dialog" aria-label="설명 닫기">×</button></div>
+        <span class="dialog-symbol" aria-hidden="true">!</span>
+        <h2 id="dialog-title">당첨금은 없지만,<br>좋은 의심은 남았습니다.</h2>
+        <p id="dialog-description">여기는 <strong>모의 피싱 시연 페이지</strong>입니다. 버튼을 눌러도 결제나 정보 전송은 일어나지 않습니다.</p>
+        <ul><li>응모하지 않은 경품은 출처부터 확인하기</li><li>마감 압박에 서두르지 말고 주소 확인하기</li><li>비밀번호·인증번호·카드 정보 입력하지 않기</li></ul>
+        <p class="privacy-note">이 페이지에는 입력 폼, 로그인, 결제, 추적 코드가 없습니다.</p>
+        <button class="claim-button dialog-confirm" id="confirm-dialog">확인했어요 <span aria-hidden="true">✓</span></button>
+      </dialog>
+    </template>
+
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <demo-banner></demo-banner>
+    <site-header></site-header>
+    <main id="main" tabindex="-1">
+      <prize-hero></prize-hero>
+      <safety-ticker></safety-ticker>
+      <red-flags></red-flags>
+    </main>
+    <site-footer></site-footer>
+    <explanation-dialog></explanation-dialog>
+    <noscript><p class="noscript-note">모의 피싱 시연용입니다. 실제 당첨금은 없으며, 화면과 가상 타이머는 JavaScript를 켜야 동작합니다.</p></noscript>
+  </body>
+</html>
